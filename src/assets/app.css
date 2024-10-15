@@ -1,0 +1,124 @@
+/* ----- POPPINS FONT Link ----- */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* ----- VARIABLES ----- */
+:root {
+  --body-color: rgb(250, 250, 250);
+  --color-white: rgb(255, 255, 255);
+
+  --text-color-second: rgb(68, 68, 68);
+  --text-color-third: rgb(30, 159, 171);
+
+  --first-color: rgb(160, 87, 224);
+  --first-color-hover: rgb(40, 91, 212);
+
+  --second-color: rgb(0, 201, 255);
+  --third-color: rgb(192, 166, 49);
+  --first-shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* ----- BASE ----- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ----- SMOOTH SCROLL ----- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ----- CHANGE THE SCROLL BAR DESIGN ----- */
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 25px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 30px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #bbb;
+}
+
+/* ----- GLOBAL ICONS DESIGN ----- */
+i {
+  font-size: 16px;
+}
+
+/* ----- BASE ----- */
+body {
+  background: var(--body-color);
+  color: var(--text-color-second);
+}
+.container {
+  width: 100%;
+  position: relative;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex; /* ใช้ flexbox เพื่อจัดเรียงโลโก้และเมนู */
+    justify-content: space-between; /* จัดให้โลโก้และเมนูอยู่ห่างกัน */
+    align-items: center; /* จัดให้ทุกอย่างอยู่กึ่งกลางในแนวตั้ง */
+    padding: 15px 20px; /* เพิ่ม padding ให้ Navbar */
+    background-color: #ffffff; /* สีพื้นหลังของ Navbar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* เงาเล็กน้อย */
+    position: sticky; /* ทำให้ Navbar คงที่เมื่อเลื่อน */
+    top: 0; /* ให้ Navbar อยู่ที่ด้านบนสุด */
+    z-index: 1000; /* ให้อยู่ด้านบนของเนื้อหา */
+  }
+  
+  .nav-logo {
+    font-size: 1.5em; /* ขนาดของชื่อร้าน */
+    color: #343a40; /* สีของชื่อร้าน */
+  }
+  
+  .nav-menu {
+    list-style: none; /* เอาสัญลักษณ์ของรายการออก */
+    display: flex; /* ใช้ flexbox สำหรับจัดรายการเมนู */
+    gap: 20px; /* เพิ่มระยะห่างระหว่างรายการเมนู */
+  }
+  
+  .nav_list {
+    margin: 0; /* เอาค่า margin ออก */
+  }
+  
+  .nav-link {
+    text-decoration: none; /* เอาเส้นใต้ลิงค์ออก */
+    color: #007bff; /* สีของลิงค์ */
+    transition: color 0.3s; /* เพิ่มการเปลี่ยนสีเมื่อมีการ hover */
+  }
+  
+  .nav-link:hover {
+    color: #0056b3; /* เปลี่ยนสีเมื่อ hover */
+  }
+  
+  
+  /* ----- END BAR ----- */
+  .endbar {
+    background-color: var(--first-color);
+    color: var(--color-white);
+    text-align: center;
+    padding: 1em;
+    font-size: 0.9em;
+    margin-top: 90px; /* เพื่อเว้นที่ให้ Navbar ที่ fixed อยู่ข้างบน */
+  }
+  
+  /* ----- WRAPPER DESIGN ----- */
+  .wrapper {
+    padding-inline: 10vw;
+  }
+  /* ----- MAIN CONTENT ----- */
+.main-content {
+    padding-top: 90px; /* เว้นพื้นที่ให้กับ Navbar */
+    padding-bottom: 50px; /* เว้นพื้นที่ให้กับ Endbar */
+    min-height: calc(100vh - 140px); /* ปรับความสูงให้เหลือพื้นที่สำหรับ Navbar และ Endbar */
+  }
+  
+  

@@ -1,0 +1,160 @@
+<template>
+  <div class="contact-view">
+    <h1>Contact Us</h1>
+    <p>If you have any questions or need further information, please feel free to reach out to us!</p>
+
+    <div class="contact-info">
+      <h2>Get in Touch</h2>
+      <p>Email: <a href="mailto:info@bookstore.com">info@bookstore.com</a></p>
+      <p>Phone: <a href="tel:+1234567890">+1 234 567 890</a></p>
+      <p>Address: 123 Book St, Literature City, ST 12345</p>
+    </div>
+
+    <form @submit.prevent="submitForm" class="contact-form">
+      <h2>Contact Form</h2>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" v-model="formData.name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" v-model="formData.email" required />
+      </div>
+      <div class="form-group">
+        <label for="message">Message:</label>
+        <textarea id="message" v-model="formData.message" required></textarea>
+      </div>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="map-container">
+      <h2>Our Location</h2>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.639329440736!2d99.7966355139026!3d13.8209003149427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e293b8a501b4a5%3A0x6c203a28ae9e27b7!2z4LiZ4Liy4LiU4Liy4LiX4Lit4Lii4LiE4LiZ4LiE4LiZ4LiH4LiU4Lij4LiX4Lij4Lih4LiU4Li44LiZ4Lih4LiT4Liy4LiK4Li04LiZ4LiE!5e0!3m2!1sen!2sth!4v1607518783072!5m2!1sen!2sth"
+        width="600"
+        height="450"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "ContactView",
+  data() {
+    return {
+      formData: {
+        name: '',
+        email: '',
+        message: ''
+      }
+    };
+  },
+  methods: {
+    submitForm() {
+      // For now, just log the form data to the console
+      console.log("Form submitted:", this.formData);
+      alert("Thank you for your message! We'll get back to you soon.");
+      this.formData.name = '';
+      this.formData.email = '';
+      this.formData.message = '';
+    }
+  }
+};
+</script>
+
+<style scoped>
+.contact-view {
+  padding: 60px 20px; /* Increased padding-top for more space from Navbar */
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px; /* Limit max width for better readability */
+  margin: auto; /* Center the content */
+}
+
+h1 {
+  color: #343a40;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.5em; /* Larger font size for the heading */
+}
+
+h2 {
+  color: #495057;
+  margin-top: 30px;
+}
+
+p {
+  color: #495057;
+  font-size: 1.2em;
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.contact-info {
+  margin-bottom: 30px; /* Space between contact info and form */
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group {
+  width: 100%; /* Full width */
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #343a40;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #495057; /* Darker on hover */
+}
+
+.map-container {
+  margin-top: 30px; /* Space above the map */
+  text-align: center; /* Center the map */
+}
+
+/* Add a media query for responsiveness */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2em; /* Smaller font size for mobile */
+  }
+
+  h2 {
+    font-size: 1.5em; /* Smaller font size for mobile */
+  }
+
+  p {
+    font-size: 1em; /* Smaller font size for mobile */
+  }
+}
+</style>
