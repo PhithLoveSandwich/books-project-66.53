@@ -120,5 +120,17 @@ body {
     padding-bottom: 50px; /* เว้นพื้นที่ให้กับ Endbar */
     min-height: calc(100vh - 140px); /* ปรับความสูงให้เหลือพื้นที่สำหรับ Navbar และ Endbar */
   }
-  
-  
+/* Log In Button */
+.btn {
+  background-color: var(--first-color); /* สีพื้นหลังปุ่ม */
+  color: var(--color-white); /* สีข้อความ */
+  padding: 10px 20px; /* ขนาดของปุ่ม */
+  border: none; /* เอาขอบออก */
+  border-radius: 5px; /* มุมโค้งมน */
+  cursor: pointer; /* เปลี่ยนเคอร์เซอร์เมื่อ hover */
+  transition: background-color 0.3s ease; /* เพิ่มการเปลี่ยนสีเมื่อ hover */
+}
+
+.btn:hover {
+  background-color: var(--first-color-hover); /* สีพื้นหลังเมื่อ hover */
+}

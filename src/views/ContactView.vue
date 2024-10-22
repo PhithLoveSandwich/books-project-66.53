@@ -30,7 +30,7 @@
     <div class="map-container">
       <h2>Our Location</h2>
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.639329440736!2d99.7966355139026!3d13.8209003149427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e293b8a501b4a5%3A0x6c203a28ae9e27b7!2z4LiZ4Liy4LiU4Liy4LiX4Lit4Lii4LiE4LiZ4LiE4LiZ4LiH4LiU4Lij4LiX4Lij4Lih4LiU4Li44LiZ4Lih4LiT4Liy4LiK4Li04LiZ4LiE!5e0!3m2!1sen!2sth!4v1607518783072!5m2!1sen!2sth"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3874.0079910374825!2d100.02287022485761!3d13.838558586562414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2e5267c8ff173%3A0xad38808cf8120641!2z4Liq4Liy4LiC4Liy4Lin4Li04LiK4Liy4Lin4Li04Lio4Lin4LiB4Lij4Lij4Lih4LiL4Lit4Lif4LiV4LmM4LmB4Lin4Lij4LmMIOC4oeC4q-C4suC4p-C4tOC4l-C4ouC4suC4peC4seC4ouC4o-C4suC4iuC4oOC4seC4j-C4meC4hOC4o-C4m-C4kOC4oQ!5e0!3m2!1sth!2sth!4v1728960213906!5m2!1sth!2sth"
         width="600"
         height="450"
         style="border:0;"

@@ -33,62 +33,75 @@
 
 <script>
 import { mapMutations } from 'vuex';
+import Swal from 'sweetalert2'; // นำเข้า SweetAlert2
 
 export default {
   data() {
-    return {
-      bookCategories: [
-        {
-          name: 'Textbooks',
-          books: [
-            { title: 'Introduction to Thai Language', author: 'Somsak Chaiyan', image: require('@/assets/img/image1.jpg'), price: 250, rating: 4.5 },
-            { title: 'Basic Mathematics', author: 'Orawan Boontavee', image: require('@/assets/img/image2.jpg'), price: 300, rating: 4.0 },
-            { title: 'Science 101', author: 'Siriporn Sriwong', image: require('@/assets/img/image3.jpg'), price: 280, rating: 4.2 },
-            { title: 'History of Thailand', author: 'Pakorn Apirak', image: require('@/assets/img/image4.jpg'), price: 320, rating: 4.8 },
-            { title: 'English for Communication', author: 'Miss Sukanya', image: require('@/assets/img/image5.jpg'), price: 270, rating: 4.6 },
-            { title: 'Basic Chemistry', author: 'Surachai Kamron', image: require('@/assets/img/image6.jpg'), price: 290, rating: 4.1 },
-            { title: 'Biology: An Introduction', author: 'Udomchai Supachai', image: require('@/assets/img/image7.jpg'), price: 310, rating: 4.4 },
-            { title: 'Basic Physics', author: 'Piengphol Chumnang', image: require('@/assets/img/image8.jpg'), price: 330, rating: 4.7 },
-          ],
-        },
-        {
-          name: 'Fiction',
-          books: [
-            { title: 'Love Lies', author: 'Jirapa Ploenchai', image: require('@/assets/img/image9.jpg'), price: 350, rating: 4.5 },
-            { title: 'Memories that Fade', author: 'Anchisa Dhamma', image: require('@/assets/img/image10.jpg'), price: 360, rating: 4.3 },
-            { title: 'Flame of the Heart', author: 'Prathumchat Lai Thai', image: require('@/assets/img/image11.jpg'), price: 340, rating: 4.9 },
-            { title: 'The Floating Tower', author: 'Wichai Chatree', image: require('@/assets/img/image12.jpg'), price: 370, rating: 4.2 },
-            { title: 'Love in Spring', author: 'Nidnoi Chuchip', image: require('@/assets/img/image13.jpg'), price: 380, rating: 4.6 },
-            { title: 'Like a Dream', author: 'Jintana Jamjaroen', image: require('@/assets/img/image14.jpg'), price: 400, rating: 4.0 },
-            { title: 'Love That Cannot Be Forgotten', author: 'Nuntiya Nontchai', image: require('@/assets/img/image15.jpg'), price: 420, rating: 4.8 },
-            { title: 'Parallel Love', author: 'Boonyarat Wongthong', image: require('@/assets/img/image16.jpg'), price: 440, rating: 4.7 },
-          ],
-        },
-        {
-          name: 'Supplementary Books',
-          books: [
-            { title: 'Exam Success Tips', author: 'Dr. Sukhum Sanan', image: require('@/assets/img/image17.jpg'), price: 250, rating: 4.5 },
-            { title: 'Legal Exam Guide', author: 'Srilanga Thongsuk', image: require('@/assets/img/image18.jpg'), price: 300, rating: 4.3 },
-            { title: 'Introduction to Computers', author: 'Peeraphat Boonrod', image: require('@/assets/img/image19.jpg'), price: 280, rating: 4.2 },
-            { title: 'Finance and Banking', author: 'Apichart Phinij', image: require('@/assets/img/image20.jpg'), price: 320, rating: 4.6 },
-            { title: 'Business English', author: 'Latdawan Panthana', image: require('@/assets/img/image21.jpg'), price: 270, rating: 4.4 },
-            { title: 'Digital Marketing', author: 'Yutthana Deeja', image: require('@/assets/img/image22.jpg'), price: 290, rating: 4.1 },
-            { title: 'Presentation Skills', author: 'Phumjai Suksawasdee', image: require('@/assets/img/image23.jpg'), price: 310, rating: 4.0 },
-            { title: 'Teamwork Skills', author: 'Apichai Janya', image: require('@/assets/img/image24.jpg'), price: 330, rating: 4.3 },
-          ],
-        },
-        // ... (other categories)
-      ],
-    };
-  },
+  return {
+    bookCategories: [
+      {
+        name: 'Textbooks',
+        books: [
+          { title: 'Introduction to Thai Language', author: 'Somsak Chaiyan', image: require('@/assets/img/image1.jpg'), price: 250, rating: 4.5 },
+          { title: 'Basic Mathematics', author: 'Orawan Boontavee', image: require('@/assets/img/image2.jpg'), price: 300, rating: 4.0 },
+          { title: 'Science 101', author: 'Siriporn Sriwong', image: require('@/assets/img/image3.jpg'), price: 280, rating: 4.2 },
+          { title: 'History of Thailand', author: 'Pakorn Apirak', image: require('@/assets/img/image4.jpg'), price: 320, rating: 4.8 },
+          { title: 'English for Communication', author: 'Miss Sukanya', image: require('@/assets/img/image5.jpg'), price: 270, rating: 4.6 },
+          { title: 'Basic Chemistry', author: 'Surachai Kamron', image: require('@/assets/img/image6.jpg'), price: 290, rating: 4.1 },
+          { title: 'Biology: An Introduction', author: 'Udomchai Supachai', image: require('@/assets/img/image7.jpg'), price: 310, rating: 4.4 },
+          { title: 'Basic Physics', author: 'Piengphol Chumnang', image: require('@/assets/img/image8.jpg'), price: 330, rating: 4.7 },
+        ],
+      },
+      {
+        name: 'Fiction',
+        books: [
+          { title: 'Love Lies', author: 'Jirapa Ploenchai', image: require('@/assets/img/image9.jpg'), price: 350, rating: 4.5 },
+          { title: 'Memories that Fade', author: 'Anchisa Dhamma', image: require('@/assets/img/image10.jpg'), price: 360, rating: 4.3 },
+          { title: 'Flame of the Heart', author: 'Prathumchat Lai Thai', image: require('@/assets/img/image11.jpg'), price: 340, rating: 4.9 },
+          { title: 'The Floating Tower', author: 'Wichai Chatree', image: require('@/assets/img/image12.jpg'), price: 370, rating: 4.2 },
+          { title: 'Love in Spring', author: 'Nidnoi Chuchip', image: require('@/assets/img/image13.jpg'), price: 380, rating: 4.6 },
+          { title: 'Like a Dream', author: 'Jintana Jamjaroen', image: require('@/assets/img/image14.jpg'), price: 400, rating: 4.0 },
+          { title: 'Love That Cannot Be Forgotten', author: 'Nuntiya Nontchai', image: require('@/assets/img/image15.jpg'), price: 420, rating: 4.8 },
+          { title: 'Parallel Love', author: 'Boonyarat Wongthong', image: require('@/assets/img/image16.jpg'), price: 440, rating: 4.7 },
+        ],
+      },
+      {
+        name: 'Supplementary Books',
+        books: [
+          { title: 'Exam Success Tips', author: 'Dr. Sukhum Sanan', image: require('@/assets/img/image17.jpg'), price: 250, rating: 4.5 },
+          { title: 'Legal Exam Guide', author: 'Srilanga Thongsuk', image: require('@/assets/img/image18.jpg'), price: 300, rating: 4.3 },
+          { title: 'Introduction to Computers', author: 'Peeraphat Boonrod', image: require('@/assets/img/image19.jpg'), price: 280, rating: 4.2 },
+          { title: 'Finance and Banking', author: 'Apichart Phinij', image: require('@/assets/img/image20.jpg'), price: 320, rating: 4.6 },
+          { title: 'Business English', author: 'Latdawan Panthana', image: require('@/assets/img/image21.jpg'), price: 270, rating: 4.4 },
+          { title: 'Digital Marketing', author: 'Yutthana Deeja', image: require('@/assets/img/image22.jpg'), price: 290, rating: 4.1 },
+          { title: 'Presentation Skills', author: 'Phumjai Suksawasdee', image: require('@/assets/img/image23.jpg'), price: 310, rating: 4.0 },
+          { title: 'Teamwork Skills', author: 'Apichai Janya', image: require('@/assets/img/image24.jpg'), price: 330, rating: 4.3 },
+        ],
+      },
+      // ... (other categories if any)
+    ],
+  };
+},
+
   methods: {
     ...mapMutations(['addToCart']),
     orderBook(book) {
       this.addToCart(book);
-      alert(`Added ${book.title} to cart!`);
+      Swal.fire({
+        title: 'สำเร็จ!',
+        text: `เพิ่ม ${book.title} ลงในตะกร้าเรียบร้อยแล้ว!`,
+        icon: 'success',
+        confirmButtonText: 'ตกลง'
+      });
     },
     viewDetails(book) {
-      alert(`Viewing details for ${book.title}`);
+      Swal.fire({
+        title: `รายละเอียดสำหรับ ${book.title}`,
+        html: `<p>ผู้เขียน: ${book.author}</p>
+               <p>ราคา: ${book.price} THB</p>
+               <p>คะแนน: ⭐ ${book.rating}/5.0</p>`,
+        confirmButtonText: 'ตกลง'
+      });
     }
   }
 };

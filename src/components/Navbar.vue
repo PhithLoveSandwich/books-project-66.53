@@ -13,6 +13,8 @@
       </li>
       <li class="nav_list"><router-link to="/contact" class="nav-link">Contact</router-link></li>
     </ul>
+    <!-- แก้ไขปุ่ม Log In ให้ใช้ router-link -->
+    <router-link to="/login" class="btn">Log In</router-link>
   </nav>
 </template>
 
